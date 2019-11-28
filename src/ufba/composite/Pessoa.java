@@ -1,6 +1,6 @@
 package ufba.composite;
 
-public abstract class Pessoa {
+public abstract class Pessoa implements Membro{
 	String nome;
 	double experiencia;
 	

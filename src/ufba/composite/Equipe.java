@@ -3,7 +3,7 @@ package ufba.composite;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Equipe {
+public class Equipe implements Membro{
 	String nome;
 	Collection<Pessoa> pessoas = new ArrayList<Pessoa>();
 	Collection<Equipe> subequipes = new ArrayList<Equipe>();
@@ -21,13 +21,13 @@ public class Equipe {
 		subequipes.add(subequipe);
 	}
 	
-	public double getCustoMensal() {
+	public double getSalario() {
 		double total = 0;
 		for (Pessoa pessoa : pessoas) {
 			total += pessoa.getSalario();
 		}
 		for (Equipe subequipe : subequipes) {
-			total += subequipe.getCustoMensal();
+			total += subequipe.getSalario();
 		}
 		return total;
 	}	
